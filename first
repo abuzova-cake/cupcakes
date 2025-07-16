@@ -18,8 +18,10 @@
     header {
       position: relative;
       header {
+  header {
   height: 90vh;
-  background: url('https://downloader.disk.yandex.ru/i/KqP6JNe_MjpL7Q') center center/cover no-repeat;
+  background: url('https://i.ibb.co/LzySk5kc/photo-2025-07-16-13-03-22.jpg') center center/cover no-repeat;
+}
 }
     }
     header > div {

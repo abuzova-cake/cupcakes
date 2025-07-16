@@ -14,20 +14,22 @@
     }
     header {
       position: relative;
-      height: 90vh;
+      height: 60vh; /* Уменьшили высоту баннера */
       overflow: hidden;
     }
     header img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Меняем cover на contain, чтобы фото не увеличивалось */
+      object-position: center;
       display: block;
+      background-color: #f0e6dc; /* Фон, если фото не занимает весь баннер */
     }
     header .overlay {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.35);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -35,40 +37,62 @@
       color: white;
       text-align: center;
       padding: 0 20px;
+      box-sizing: border-box;
     }
     header .overlay h1 {
       font-family: 'Pacifico', cursive;
-      font-size: 3.5rem;
-      margin: 0 0 20px 0;
+      font-size: 3rem;
+      margin: 0 0 15px 0;
       text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
     header .overlay p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       max-width: 600px;
       margin: 0 0 30px 0;
       text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
+
+    /* Стиль кнопки */
     header .overlay a {
       background: #f7a072;
       color: white;
-      padding: 15px 40px;
+      padding: 14px 50px;
       border-radius: 30px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background 0.3s ease;
+      box-shadow: 0 6px 15px rgba(247,160,114,0.6);
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      display: inline-block;
     }
-    header .overlay a:hover {
+    header .overlay a:hover,
+    header .overlay a:focus {
       background: #d2691e;
+      box-shadow: 0 8px 25px rgba(210,105,30,0.8);
+      transform: translateY(-4px);
+      outline: none;
     }
-    /* Адаптивность */
+    header .overlay a:active {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(210,105,30,0.6);
+    }
+
+    /* Адаптив для мобильных */
     @media (max-width: 720px) {
+      header {
+        height: 50vh;
+      }
       header .overlay h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
       header .overlay p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+      }
+      header .overlay a {
+        padding: 12px 35px;
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -88,4 +112,5 @@
 
 </body>
 </html>
+
 
